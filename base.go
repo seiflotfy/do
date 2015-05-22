@@ -15,20 +15,25 @@ func getIterable(iterable interface{}) reflect.Value {
 	return v
 }
 
-func getFunction(function interface{}, argType reflect.Type, retType reflect.Type) reflect.Value {
+func getFunction(function interface{}, argType reflect.Type, retType reflect.Type, numArgs int) reflect.Value {
 	v := reflect.ValueOf(function)
 	if !v.IsValid() {
 		panic(fmt.Errorf("%T is of invalid type", function))
 	} else if v.Kind() != reflect.Func {
 		panic(fmt.Errorf("%T is not of type func(%s) %s", function, argType.Elem(), retType))
-	} else if v.Type().NumIn() != 1 {
+	} else if v.Type().NumIn() != numArgs {
 		panic(fmt.Errorf("%T is not of type func(%s) %s: number of input != 1", function, argType, retType))
 	} else if v.Type().NumOut() != 1 {
 		panic(fmt.Errorf("%T is not of type func(%s) %s: number of output != 1", function, argType, retType))
-	} else if v.Type().In(0) != argType {
-		panic(fmt.Errorf("%T is not of type func(%s) %s: input not of type %s", function, argType, retType, argType))
 	} else if retType != nil && v.Type().Out(0) != retType {
 		panic(fmt.Errorf("%T is not of type func(%s) %s: return not of type %s", function, argType, retType, retType))
 	}
+
+	for i := 0; i < numArgs; i++ {
+		if v.Type().In(i) != argType {
+			panic(fmt.Errorf("%T is not of type func(%s) %s: input not of type %s", function, argType, retType, argType))
+		}
+	}
+
 	return v
 }
