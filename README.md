@@ -48,7 +48,7 @@ import ("github.com/geekyogre/gogo") gg
 
 iterable := []bool{false, false, false, true}
 
-values := Any(iterable)
+values := gg.Any(iterable)
 // values => true
 
 ```
@@ -61,8 +61,8 @@ import ("github.com/geekyogre/gogo") gg
 
 iterable := []bool{false, false, false, true}
 
-values := Any(iterable)
-// values => true
+values := gg.All(iterable)
+// values => false
 
 ```
 
@@ -72,13 +72,13 @@ import ("github.com/geekyogre/gogo") gg
 
 ...
 
-values := Range(5)
+values := gg.Range(5)
 // values => [0, 1, 2, 3, 4]
 
-values := Range(5, 10)
+values := gg.Range(5, 10)
 // values => [5, 6, 7, 8, 9]
 
-values := Range(5, 25, 5)
+values := gg.Range(5, 25, 5)
 // values => [5, 10, 15, 20]
 
 
