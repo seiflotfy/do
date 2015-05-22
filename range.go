@@ -1,7 +1,9 @@
 package gogo
 
+import "fmt"
+
 /*
-Range
+Range ...
 Returns a slice of ints in a range
 */
 func Range(args ...int) []int {
@@ -13,14 +15,21 @@ func Range(args ...int) []int {
 	if len(args) >= 2 {
 		start = args[0]
 		end = args[1]
+		if end <= start {
+			panic(fmt.Errorf("start %d is larger than end %d", start, end))
+		}
 	}
 	if len(args) == 3 {
 		step = args[2]
 	}
 
-	values := make([]int, ((end-start)/step)+1)
+	values := make([]int, ((end - start) / step))
 	for i := 0; i < len(values); i++ {
-		values[i] = start + i*step
+		v := start + i*step
+		if v >= end {
+			return values
+		}
+		values[i] = v
 	}
 
 	return values
