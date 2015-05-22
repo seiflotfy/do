@@ -4,7 +4,7 @@ import "reflect"
 
 /*
 Filter ...
-Return true if any elements of the iterable are true, the iterable is empty, return false.
+Construct a list from those elements of iterable for which function returns true.
 */
 func Filter(function interface{}, iterable interface{}) interface{} {
 	iterValue := getIterable(iterable)

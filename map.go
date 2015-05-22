@@ -4,7 +4,7 @@ import "reflect"
 
 /*
 Map ...
-Return true if any elements of the iterable are true, the iterable is empty, return false.
+Apply function to every item of iterable and return a list of the results..
 */
 func Map(function interface{}, iterable interface{}) interface{} {
 	iterValue := getIterable(iterable)
