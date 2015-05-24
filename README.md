@@ -116,3 +116,21 @@ value := gg.Round(8.5645, 2)
 
 
 ```
+
+## Sum
+```
+import ("github.com/geekyogre/gogo") gg
+
+...
+
+value := gg.Sum([]int {1, 2, 4, 8, 16, 32, 64, 128})
+// value => 255
+
+value := gg.Sum32([]int32 {1, 2, 4, 8, 16, 32, 64, 128})
+// value => 255
+
+value := gg.Sum64([]int64 {1, 2, 4, 8, 16, 32, 64, 128})
+// value => 255
+
+
+```
