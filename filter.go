@@ -3,8 +3,7 @@ package gogo
 import "reflect"
 
 /*
-Filter ...
-Construct a list from those elements of iterable for which function returns true.
+Filter returns a list of elements from iterable for which function returns true.
 */
 func Filter(function interface{}, iterable interface{}) interface{} {
 	iterValue := getIterable(iterable)

@@ -3,8 +3,7 @@ package gogo
 import "fmt"
 
 /*
-Range ...
-Returns a slice of ints in a range
+Range returns a list of ints in a range
 */
 func Range(args ...int) []int {
 	start, end := 0, 0
