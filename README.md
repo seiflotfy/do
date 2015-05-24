@@ -97,3 +97,21 @@ values := gg.Range(5, 25, 5)
 
 
 ```
+
+## Round
+```
+import ("github.com/geekyogre/gogo") gg
+
+...
+
+value := gg.Round(5.08, 1)
+// value => 5.1
+
+value := gg.Round(1.0001, 1)
+// value => 1.0
+
+value := gg.Round(8.5645, 2)
+// value => 8.56
+
+
+```
