@@ -5,10 +5,9 @@ import (
 )
 
 /*
-Round ...
-Rounds a float64 number up to a specific decimal point.
+Round returns value rounded on the decimal value.
 */
-func Round(value float64, comma int) float64 {
+func Round(value float64, decimal int) float64 {
 	var rounding float64
 	pow := math.Pow(10, float64(comma))
 

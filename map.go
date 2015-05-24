@@ -6,8 +6,7 @@ import (
 )
 
 /*
-Map ...
-Apply function to every item of iterable and return a list of the results..
+Map apply function to every item of iterable and return a list of the results..
 */
 func Map(function interface{}, iterable interface{}) interface{} {
 	iterValue := getIterable(iterable)
@@ -23,8 +22,7 @@ func Map(function interface{}, iterable interface{}) interface{} {
 }
 
 /*
-MapParallel ...
-Apply function to every item of iterable and return a list of the results. numParallel defines the number of items
+MapParallel apply function to every item of iterable and return a list of the results. numParallel defines the number of items
 the function will be applied to in parallel
 */
 func MapParallel(function interface{}, iterable interface{}, numParallel int) interface{} {
