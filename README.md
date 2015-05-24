@@ -1,5 +1,6 @@
 # GoGo
-A collection of essential non-built-in helper Functions
+[![GoDoc](https://godoc.org/github.com/geekyogre/gogo?status.png)](http://godoc.org/github.com/geekyogre/gogo)
+GoGo is collection of essential non-built-in helper Functions. Mostly inspired by the Python built-in functions
 
 ## Map
 ```
