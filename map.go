@@ -2,6 +2,7 @@ package gogo
 
 import (
 	"reflect"
+	"runtime"
 	"sync"
 )
 
@@ -36,25 +37,37 @@ func MapParallel(function interface{}, iterable interface{}, numParallel int) in
 	iterValue := getIterable(iterable)
 	funcValue := getFunction(function, iterValue.Type().Elem(), nil, 1)
 	returnValue := reflect.MakeSlice(reflect.SliceOf(funcValue.Type().Out(0)), iterValue.Len(), iterValue.Len())
-	funcInput := make([]reflect.Value, 1)
 
 	var wg sync.WaitGroup
 	defer wg.Wait()
+	resChan := make(chan parallelStruct)
 
 	var pFunc = func(j int) {
 		defer wg.Done()
+		funcInput := make([]reflect.Value, 1)
 		funcInput[0] = iterValue.Index(j)
 		res := funcValue.Call(funcInput)
-		returnValue.Index(j).Set(res[0])
+		resChan <- parallelStruct{j, res[0]}
 	}
-
+	runtime.GOMAXPROCS(4)
 	for i := 0; i < iterValue.Len(); i++ {
 		wg.Add(1)
 		go pFunc(i)
 		if (i+1)%numParallel == 0 {
-			wg.Wait()
+			for j := 0; j < numParallel; j++ {
+				pS := <-resChan
+				returnValue.Index(pS.pos).Set(pS.val)
+			}
 		}
 	}
-
+	for j := 0; j < iterValue.Len()%numParallel; j++ {
+		pS := <-resChan
+		returnValue.Index(pS.pos).Set(pS.val)
+	}
 	return returnValue.Interface()
+}
+
+type parallelStruct struct {
+	pos int
+	val reflect.Value
 }
