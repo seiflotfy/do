@@ -14,6 +14,20 @@ values := gg.Map(func(v int) bool { return v%2 == 0 }, iterable)
 
 ```
 
+## MapParallel
+```
+import ("github.com/geekyogre/gogo") gg
+
+...
+
+iterable := []int{9, 8, 7, 6, 5, 6, 6, 1}
+
+values := gg.MapParallel(func(v int) bool { return v%2 == 0 }, iterable, 4)
+// values => [false, true, false, true, false, true, true, false]
+
+```
+
+
 ## Reduce
 ```
 import ("github.com/geekyogre/gogo") gg
