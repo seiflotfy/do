@@ -2,7 +2,6 @@ package gogo
 
 import (
 	"reflect"
-	"runtime"
 	"sync"
 )
 
@@ -49,7 +48,6 @@ func MapParallel(function interface{}, iterable interface{}, numParallel int) in
 		res := funcValue.Call(funcInput)
 		resChan <- parallelStruct{j, res[0]}
 	}
-	runtime.GOMAXPROCS(4)
 	for i := 0; i < iterValue.Len(); i++ {
 		wg.Add(1)
 		go pFunc(i)
