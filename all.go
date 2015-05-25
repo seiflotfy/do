@@ -1,4 +1,4 @@
-package gogo
+package do
 
 /*
 All returns true if all elements of the iterable are true (or if the iterable is empty).
