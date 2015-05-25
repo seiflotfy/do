@@ -1,6 +1,6 @@
 # Do
-[![GoDoc](https://godoc.org/github.com/geekyogre/do?status.png)](http://godoc.org/github.com/geekyogre/do)
-Do is collection of essential non-built-in helper Functions for Go. Mostly inspired by the Python built-in functions
+[![GoDoc](https://godoc.org/github.com/geekyogre/do?status.svg)](https://godoc.org/github.com/geekyogre/do)
+Do is collection of essential non-built-in helper Functions for Go, mostly inspired by the Python built-in functions
 
 ## Map
 ```
