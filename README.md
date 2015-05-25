@@ -5,7 +5,6 @@ Do is collection of essential non-built-in helper Functions for Go, mostly inspi
 ## Map
 ```
 import ("github.com/geekyogre/do")
-
 ...
 
 iterable := []int{9, 8, 7, 6}
@@ -18,7 +17,6 @@ values : do.Map(func(v int) bool { return v%2 == 0 }, iterable)
 ## MapParallel
 ```
 import ("github.com/geekyogre/do")
-
 ...
 
 iterable := []int{9, 8, 7, 6, 5, 6, 6, 1}
@@ -31,7 +29,6 @@ values : do.MapParallel(func(v int) bool { return v%2 == 0 }, iterable, 4)
 ## Reduce
 ```
 import ("github.com/geekyogre/do")
-
 ...
 
 iterable := []int{9, 8, 7, 6}
@@ -44,7 +41,6 @@ values : do.Reduce(func(v1 int, v2 int) int { return v1 * v2 }, iterable)
 ## Filter
 ```
 import ("github.com/geekyogre/do")
-
 ...
 
 iterable := []int{9, 8, 7, 6}
@@ -69,7 +65,6 @@ values : do.Unique(func(v int) int { return v }, iterable)
 ## Any
 ```
 import ("github.com/geekyogre/do")
-
 ...
 
 iterable := []bool{false, false, false, true}
@@ -82,7 +77,6 @@ values : do.Any(iterable)
 ## All
 ```
 import ("github.com/geekyogre/do")
-
 ...
 
 iterable := []bool{false, false, false, true}
@@ -97,7 +91,6 @@ values : do.All(iterable)
 import ("github.com/geekyogre/do")
 
 ...
-
 values : do.Range(5)
 // values => [0, 1, 2, 3, 4]
 
@@ -112,7 +105,6 @@ values : do.Range(5, 25, 5)
 ## Round
 ```
 import ("github.com/geekyogre/do")
-
 ...
 
 value : do.Round(5.08, 1)
