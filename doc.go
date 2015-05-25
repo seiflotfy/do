@@ -19,6 +19,6 @@ SOFTWARE.
 */
 
 /*
-Package gogo is collection of essential non-built-in helper Functions. Mostly inspired by the Python built-in functions.
+Package do is collection of essential non-built-in helper Functions for Go, mostly inspired by the Python built-in functions.
 */
-package gogo
+package do
