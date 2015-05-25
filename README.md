@@ -28,7 +28,6 @@ values : do.MapParallel(func(v int) bool { return v%2 == 0 }, iterable, 4)
 
 ```
 
-
 ## Reduce
 ```
 import ("github.com/geekyogre/do")
@@ -52,6 +51,18 @@ iterable := []int{9, 8, 7, 6}
 
 values : do.Filter(func(v int) bool { return v%2 == 0 }, iterable)
 // values => [8, 6]
+
+```
+
+## Unique
+```
+import ("github.com/geekyogre/do")
+...
+
+iterable := []int{8, 9, 8, 5, 7, 6, 5}
+
+values : do.Unique(func(v int) int { return v }, iterable)
+// values => [8, 9, 5, 7, 6]
 
 ```
 
@@ -96,7 +107,6 @@ values : do.Range(5, 10)
 values : do.Range(5, 25, 5)
 // values => [5, 10, 15, 20]
 
-
 ```
 
 ## Round
@@ -113,6 +123,5 @@ value : do.Round(1.0001, 1)
 
 value : do.Round(8.5645, 2)
 // value => 8.56
-
 
 ```
