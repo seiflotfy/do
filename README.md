@@ -117,3 +117,21 @@ value : do.Round(8.5645, 2)
 // value => 8.56
 
 ```
+
+```
+## Sum
+```
+import ("github.com/geekyogre/do")
+
+...
+
+value := do.Sum([]int {1, 2, 4, 8, 16, 32, 64, 128})
+// value => 255
+
+value := do.Sum32([]int32 {1, 2, 4, 8, 16, 32, 64, 128})
+// value => 255
+
+value := do.Sum64([]int64 {1, 2, 4, 8, 16, 32, 64, 128})
+// value => 255
+
+```
