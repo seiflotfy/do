@@ -118,7 +118,6 @@ value : do.Round(8.5645, 2)
 
 ```
 
-
 ## Sum
 ```
 import ("github.com/geekyogre/do")
@@ -132,5 +131,15 @@ value := do.Sum32([]int32 {1, 2, 4, 8, 16, 32, 64, 128})
 
 value := do.Sum64([]int64 {1, 2, 4, 8, 16, 32, 64, 128})
 // value => 255
+
+```
+
+## Slice
+```
+import ("github.com/geekyogre/do")
+...
+
+value := do.Slice([]int {1, 2, 4, 8, 16, 32, 64, 128}, 1, 5, 3)
+// value => [4 32]
 
 ```
