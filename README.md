@@ -143,3 +143,14 @@ value := do.Slice([]int {1, 2, 4, 8, 16, 32, 64, 128}, 1, 5, 3)
 // value => [4 32]
 
 ```
+
+
+## Reversed
+```
+import ("github.com/geekyogre/do")
+...
+
+value := do.Reversed([]int {1, 2, 4, 8, 16})
+// value => []int {16, 8, 4, 2, 1}
+
+```
