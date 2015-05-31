@@ -3,9 +3,9 @@ package do
 import "reflect"
 
 /*
-Reversed returns the values of a given slice or array in reverse order.
+Reverse returns the values of a given slice or array in reverse order.
 */
-func Reversed(iterable interface{}) interface{} {
+func Reverse(iterable interface{}) interface{} {
 	iterValue := getIterable(iterable)
 	iterLen := iterValue.Len()
 	returnValue := reflect.MakeSlice(iterValue.Type(), iterLen, iterLen)
