@@ -3,7 +3,7 @@ package do
 import "reflect"
 
 /*
-Reversed returns the values of a given interface on a reversed basis.
+Reversed returns the values of a given slice or array in reverse order.
 */
 func Reversed(iterable interface{}) interface{} {
 	iterValue := getIterable(iterable)
