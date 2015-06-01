@@ -154,3 +154,15 @@ value := do.Reversed([]int {1, 2, 4, 8, 16})
 // value => []int {16, 8, 4, 2, 1}
 
 ```
+
+## Sum
+```
+import ("github.com/geekyogre/do")
+...
+
+value := do.Sum([]float32{1.1, 2, 4, 8, 16, 32, 64, 128})
+// float32(Sum(value).(float64)) => 255.1
+
+//Note: Sum will return an interface that can be assigned only to int64 or float64
+
+```
