@@ -5,15 +5,15 @@ import (
 	"testing"
 )
 
-func TestUnique(t *testing.T) {
+func TestUniquify(t *testing.T) {
 	iterable := []int{8, 9, 8, 5, 7, 6, 5}
-	values := Unique(func(v int) int { return v }, iterable)
+	values := Uniquify(func(v int) int { return v }, iterable)
 	if !reflect.DeepEqual(values, []int{8, 9, 5, 7, 6}) {
 		t.Error("Error expected", []int{8, 9, 5, 7, 6}, "got", values)
 	}
 }
 
-func TestUniqueStruct(t *testing.T) {
+func TestUniquifyStruct(t *testing.T) {
 
 	type uniqueStruct struct {
 		val int
@@ -37,7 +37,7 @@ func TestUniqueStruct(t *testing.T) {
 		uniqueStruct{6},
 	}
 
-	values := Unique(func(v uniqueStruct) int { return v.val }, iterable)
+	values := Uniquify(func(v uniqueStruct) int { return v.val }, iterable)
 	if !reflect.DeepEqual(values, result) {
 		t.Error("Error expected", result, "got", values)
 	}

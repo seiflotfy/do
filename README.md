@@ -139,14 +139,14 @@ value := do.Sum([]float32{1.1, 2, 4, 8, 16, 32, 64, 128})
 *Note: Sum will return an interface that can be assigned only to int64 or float64*
 
 
-## Unique
+## Uniquify
 ```
 import ("github.com/geekyogre/do")
 ...
 
 iterable := []int{8, 9, 8, 5, 7, 6, 5}
 
-values : do.Unique(func(v int) int { return v }, iterable)
+values : do.Uniquify(func(v int) int { return v }, iterable)
 // values => [8, 9, 5, 7, 6]
 
 ```

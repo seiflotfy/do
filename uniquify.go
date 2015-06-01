@@ -3,9 +3,9 @@ package do
 import "reflect"
 
 /*
-Unique returns a list of unique elements from iterable .
+Uniquify returns a list of unique elements from iterable.
 */
-func Unique(function interface{}, iterable interface{}) interface{} {
+func Uniquify(function interface{}, iterable interface{}) interface{} {
 	iterValue := getIterable(iterable)
 	funcValue := getFunction(function, iterValue.Type().Elem(), nil, 1)
 	returnValue := reflect.MakeSlice(iterValue.Type(), 0, 0)
