@@ -5,7 +5,7 @@ Do is collection of essential non-built-in helper Functions for Go, mostly inspi
 
 ## All
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 iterable := []bool{false, false, false, true}
@@ -17,7 +17,7 @@ values : do.All(iterable)
 
 ## Any
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 iterable := []bool{false, false, false, true}
@@ -29,7 +29,7 @@ values : do.Any(iterable)
 
 ## Filter
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 iterable := []int{9, 8, 7, 6}
@@ -41,7 +41,7 @@ values : do.Filter(func(v int) bool { return v%2 == 0 }, iterable)
 
 ## Map
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 iterable := []int{9, 8, 7, 6}
@@ -53,7 +53,7 @@ values : do.Map(func(v int) bool { return v%2 == 0 }, iterable)
 
 ## MapParallel
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 iterable := []int{9, 8, 7, 6, 5, 6, 6, 1}
@@ -65,7 +65,7 @@ values : do.MapParallel(func(v int) bool { return v%2 == 0 }, iterable, 4)
 
 ## Range
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 
 ...
 values : do.Range(5)
@@ -81,7 +81,7 @@ values : do.Range(5, 25, 5)
 
 ## Reduce
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 iterable := []int{9, 8, 7, 6}
@@ -93,7 +93,7 @@ values : do.Reduce(func(v1 int, v2 int) int { return v1 * v2 }, iterable)
 
 ## Reversed
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 value := do.Reversed([]int {1, 2, 4, 8, 16})
@@ -119,7 +119,7 @@ value : do.Round(8.5645, 2)
 
 ## Slice
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 value := do.Slice([]int {1, 2, 4, 8, 16, 32, 64, 128}, 1, 5, 3)
@@ -129,7 +129,7 @@ value := do.Slice([]int {1, 2, 4, 8, 16, 32, 64, 128}, 1, 5, 3)
 
 ## Sum
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 value := do.Sum([]float32{1.1, 2, 4, 8, 16, 32, 64, 128})
@@ -141,7 +141,7 @@ value := do.Sum([]float32{1.1, 2, 4, 8, 16, 32, 64, 128})
 
 ## Uniquify
 ```go
-import ("github.com/geekyogre/do")
+import ("github.com/seiflotfy/do")
 ...
 
 iterable := []int{8, 9, 8, 5, 7, 6, 5}
