@@ -2,6 +2,7 @@
 [![GoDoc](https://godoc.org/github.com/geekyogre/do?status.svg)](https://godoc.org/github.com/geekyogre/do)
 Do is collection of essential non-built-in helper Functions for Go, mostly inspired by the Python built-in functions
 
+It tries to check type compatibilities between the arguments and the return value and panics on incompatible input/output
 
 ## All
 ```go
