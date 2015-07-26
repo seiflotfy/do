@@ -4,7 +4,7 @@ Do is collection of essential non-built-in helper Functions for Go, mostly inspi
 
 
 ## All
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -16,7 +16,7 @@ values : do.All(iterable)
 ```
 
 ## Any
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -28,7 +28,7 @@ values : do.Any(iterable)
 ```
 
 ## Filter
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -40,7 +40,7 @@ values : do.Filter(func(v int) bool { return v%2 == 0 }, iterable)
 ```
 
 ## Map
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -52,7 +52,7 @@ values : do.Map(func(v int) bool { return v%2 == 0 }, iterable)
 ```
 
 ## MapParallel
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -64,7 +64,7 @@ values : do.MapParallel(func(v int) bool { return v%2 == 0 }, iterable, 4)
 ```
 
 ## Range
-```
+```go
 import ("github.com/geekyogre/do")
 
 ...
@@ -80,7 +80,7 @@ values : do.Range(5, 25, 5)
 ```
 
 ## Reduce
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -92,7 +92,7 @@ values : do.Reduce(func(v1 int, v2 int) int { return v1 * v2 }, iterable)
 ```
 
 ## Reversed
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -102,7 +102,7 @@ value := do.Reversed([]int {1, 2, 4, 8, 16})
 ```
 
 ## Round
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -118,7 +118,7 @@ value : do.Round(8.5645, 2)
 ```
 
 ## Slice
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -128,7 +128,7 @@ value := do.Slice([]int {1, 2, 4, 8, 16, 32, 64, 128}, 1, 5, 3)
 ```
 
 ## Sum
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
@@ -140,7 +140,7 @@ value := do.Sum([]float32{1.1, 2, 4, 8, 16, 32, 64, 128})
 
 
 ## Uniquify
-```
+```go
 import ("github.com/geekyogre/do")
 ...
 
